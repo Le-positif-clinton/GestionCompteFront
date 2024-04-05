@@ -1,13 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>gestionnaires</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/accuieil-a" icon="chevron-back-outline" text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">gestionnaires</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <ion-content [fullscreen]="true"> -->
+    <div class="container">
+      <h1>DigitBank</h1>
+    </div>
+   
+    <ion-card>
+     <h1>Liste des gestionnaires</h1>
+      <ion-list *ngFor="let gestionnaire of gestionnaires">
+        <ion-item>
+          <ion-label>
+            <h2>{{gestionnaire.nom}}</h2>
+          </ion-label>
+          <ion-label>
+            <h2>{{gestionnaire.email}}</h2>
+          </ion-label>
+          <ion-label>
+            <h2>{{gestionnaire.telephone}}</h2>
+          </ion-label>
+          <ion-label>
+            <h2>{{gestionnaire.adresse}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-fab-button (click)="nouveau()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  <!-- </ion-content> -->
 </ion-content>
+
+

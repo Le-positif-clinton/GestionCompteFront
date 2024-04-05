@@ -10,17 +10,16 @@
 <ion-content [fullscreen]="true">
   <ion-content [fullscreen]="true">
     <div class="container">
-      <h1>Our-Bank</h1>
+      <h1>DigitBank</h1>
     </div>
    
     <ion-card>
       <p>Ajouter un gestionnaire</p>
-      <input type="file" name="inputFile" (change)="chooseFile($event)" required/>
 
       <ion-input class="int1"   placeholder="Entrer Le Nom du gestionnaire  " [(ngModel)]="gestionnaire.nom"> 
         <ion-icon slot="start" src="../../../assets/icon/person.svg"  aria-hidden="true"></ion-icon>
       </ion-input>
-      <ion-input class="int1"    placeholder="Entrer le telephone de l'gestionnaire" [(ngModel)]="gestionnaire.telephone">
+      <ion-input class="int1"    placeholder="Entrer le telephone de gestionnaire" [(ngModel)]="gestionnaire.telephone">
         <ion-icon slot="start" src="../../../assets/icon/person.svg" aria-hidden="true"></ion-icon>
       </ion-input>
 
@@ -28,13 +27,14 @@
         <ion-icon slot="start" src="../../../assets/icon/mail.svg" aria-hidden="true"></ion-icon>
       </ion-input>
 
-      <ion-input   placeholder="Entrer le Mot de passe" [(ngModel)]="gestionnaire.motDePasse">
+      <ion-input class="int1"   placeholder="Entrer le mot de passe du gestionnaire" [(ngModel)]="gestionnaire.motDePasse">
+        <ion-icon slot="start" src="../../../assets/icon/mail.svg" aria-hidden="true"></ion-icon>
+      </ion-input>
+
+      <ion-input   placeholder="Entrer l'adresse du gestionnaire" [(ngModel)]="gestionnaire.adresse">
         <ion-icon slot="start" src="../../../assets/icon/lock.svg" aria-hidden="true"></ion-icon>
       </ion-input>
 
-      <ion-select class="int1" label-placement="floating" [(ngModel)]="gestionnaire.boutique" label=" Choisir une Boutique" placeholder="Choisir une Boutique:"> 
-        <ion-select-option value="{{boutique.data.nom}}" *ngFor="let boutique of boutiques | async">{{boutique.data.nom}} - {{boutique.data.lieux}}</ion-select-option>
-      </ion-select>
 
       <ion-button size="small" (click)="register()"   fill="clear" s>
         <ion-text >Enregistrer</ion-text>        

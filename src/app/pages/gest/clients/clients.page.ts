@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-clients',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsPage implements OnInit {
 
-  constructor() { }
+  clients: Array<any> = []
+
+  constructor(
+    private router: Router,
+    private apiServ: ApiService
+  ) { }
 
   ngOnInit() {
+    this.apiServ.findAllClient().subscribe((data:any)=>{
+      this.clients = data;
+    }, (err)=>{
+      console.log("erreur", err);
+    })
+  }
+
+  nouveau(){
+    this.router.navigate(['new-compte']);
   }
 
 }

@@ -1,13 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>comptes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/accuieil-a" icon="chevron-back-outline" text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">comptes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <ion-content [fullscreen]="true"> -->
+    <div class="container">
+      <h1>DigitBank</h1>
+    </div>
+   
+    <ion-card>
+     <h1>Choisissez le compte</h1>
+     <ion-searchbar placeholder="Rechercher un compte par son numero"  (ionInput)="onSearchChange($event)"></ion-searchbar>
+      <ion-list *ngFor="let compte of comptes">
+        <ion-item (click)="compteS(compte)"> 
+          <ion-label>
+            <h2>{{compte.client.nom}}</h2>
+          </ion-label>
+          <ion-label>
+            <h2>{{compte.numero}}</h2>
+          </ion-label>
+          <ion-label>
+            <h2>{{compte.solde}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  <!-- </ion-content> -->
+  <ion-fab-button (click)="nouveau()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
 </ion-content>
+
+

@@ -1,13 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>new-compte</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/accuieil-a" icon="chevron-back-outline" text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">new-compte</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <ion-content [fullscreen]="true"> -->
+    <div class="container">
+      <h1>DigitBank</h1>
+    </div>
+   
+    <ion-card>
+      <p>Nouveau compte</p>
+
+      <ion-select class="int1" label-placement="floating" [(ngModel)]="compte.client.id" label="Choisir le client" placeholder="Choisir le client:"> 
+        <ion-select-option  *ngFor="let client of clients" value="{{client.id}}" >{{client.nom}} - {{client.email}}</ion-select-option>
+      </ion-select>
+
+      <ion-input class="int1"    placeholder="Entrer le numero du compte" [(ngModel)]="compte.numero">
+        <ion-icon slot="start" src="../../../assets/icon/person.svg" aria-hidden="true"></ion-icon>
+      </ion-input>
+
+      <ion-input class="int1" type="number"  placeholder="Entrer Le solde initial du compte  " [(ngModel)]="compte.solde"> 
+        <ion-icon slot="start" src="../../../assets/icon/person.svg"  aria-hidden="true"></ion-icon>
+      </ion-input>
+
+      <ion-select class="int1" label-placement="floating" [(ngModel)]="type" label="Choisir le type de compte" placeholder="Choisir le type de compte:"> 
+        <ion-select-option value="courant" >Courant</ion-select-option>
+        <ion-select-option value="epargne" >Epargne</ion-select-option>
+      </ion-select>
+
+      <ion-input *ngIf="type === 'epargne'" class="int1" type="number"  placeholder="Entrer La duree en jours " [(ngModel)]="compte.duree"> 
+        <ion-icon slot="start" src="../../../assets/icon/person.svg"  aria-hidden="true"></ion-icon>
+      </ion-input>
+
+      <ion-button size="small" (click)="enregistrer()"   fill="clear" s>
+        <ion-text >Enregistrer</ion-text>        
+      </ion-button>
+    </ion-card>
+  <!-- </ion-content> -->
 </ion-content>
+
+

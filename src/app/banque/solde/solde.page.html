@@ -10,14 +10,19 @@
 <ion-content [fullscreen]="true">
   <ion-content [fullscreen]="true">
     <div class="container">
-      <h1>Bienvennu Dans DigitBank</h1>
-      <h2>Votre Application de gestion des transactions bancaires</h2>
+      <h1>DigitBank</h1>
     </div>
    
     <ion-card>
-     
-      <ion-button size="small" (click)="connexion()"   fill="clear" s>
-        <ion-text >Valider</ion-text>        
+      <p>Solde</p>
+      <ion-item>
+        <ion-label>
+          <h2>le solde du compte numero {{compte.numero}} a la date du {{date}} est de : <strong>{{compte.solde}} FCFA</strong></h2>
+        </ion-label>
+      </ion-item>
+
+      <ion-button size="small" (click)="historique()"   fill="clear" s>
+        <ion-text >Consulter l'historique des transactions</ion-text>        
       </ion-button>
     </ion-card>
   </ion-content>

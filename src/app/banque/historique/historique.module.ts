@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BonEntrePageRoutingModule } from './bon-entre-routing.module';
+import { HistoriquePageRoutingModule } from './historique-routing.module';
 
-import { BonEntrePage } from './bon-entre.page';
+import { HistoriquePage } from './historique.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BonEntrePageRoutingModule
+    HistoriquePageRoutingModule
   ],
-  declarations: [BonEntrePage]
+  declarations: [HistoriquePage]
 })
-export class BonEntrePageModule {}
+export class HistoriquePageModule {}

@@ -12,50 +12,24 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class NewGestionnairePage implements OnInit {
 
-  gestionnaire:any
-
-  loading!: HTMLIonLoadingElement;
-
-  selectedFile: any;
-
-  boutiques!: Observable<any[]>;
+  gestionnaire:any = {};
 
   constructor(
     private apiServ: ApiService,
     private loadingController: LoadingController,
-    private firebaseServ: FirebaseService,
     private router: Router
   ) { }
 
   ngOnInit() {
-    // this.boutiques = this.apiServ.findAllBoutiques();
   }
 
-  async register(){
-
-    await this.presentLoading();
-    // this.gestionnaire.image = await this.firebaseServ.saveImageUser(this.gestionnaire.email, this.selectedFile)
-    
-
-    await this.apiServ.saveGestionnaire(this.gestionnaire).subscribe(rep=>{
-      this.loading.dismiss();
-      this.router.navigate(['lgestionnaire']);
-    },err=>{
-      console.log("erreur lors de l'enregistrement du gestionnaire", err);
-      alert("erreur lors de l'enregistrement du gestionnaire");
+  register(){
+    this.apiServ.saveGestionnaire(this.gestionnaire).subscribe((rep)=>{
+      alert("Gestionnaire enregistrer avec success!");
+      this.router.navigate(['gestionnaires']);
+    },(err)=>{
+      console.log("erreurrr",err)
     })
+  }
   
-  }
-
-  chooseFile (event:any) {
-    this.selectedFile = event.target.files
-  }
-
-  async presentLoading() {
-    this.loading = await this.loadingController.create({
-      message: "Veuillez patienter pendant l'enregistrement de l'image..."
-    });
-    return this.loading.present();
-  }
-
 }

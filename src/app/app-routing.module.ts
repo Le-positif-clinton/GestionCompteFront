@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -60,9 +60,13 @@ const routes: Routes = [
     loadChildren: () => import('./banque/virement/virement.module').then( m => m.VirementPageModule)
   },
   {
-    path: 'bon-entre',
-    loadChildren: () => import('./pages/bon-entre/bon-entre.module').then( m => m.BonEntrePageModule)
+    path: 'solde',
+    loadChildren: () => import('./banque/solde/solde.module').then( m => m.SoldePageModule)
   },
+  {
+    path: 'historique',
+    loadChildren: () => import('./banque/historique/historique.module').then( m => m.HistoriquePageModule)
+  }
 ];
 
 @NgModule({

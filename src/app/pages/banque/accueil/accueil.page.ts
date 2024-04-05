@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-accueil',
@@ -8,14 +9,17 @@ import { Router } from '@angular/router';
 })
 export class AccueilPage implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private utiliServ: UtilsService
+    ) {}
 
   gererClients(){
     this.router.navigate(["clients"])
   }
 
   gererComptes(){
-    this.router.navigate(["comtes"])
+    this.router.navigate(["comptes"])
   }
 
   gererGestionnaires(){
@@ -27,7 +31,8 @@ export class AccueilPage implements OnInit {
   }
 
   deconnection(){
-    this.router.navigate(["login"])
+    this.router.navigate(["login"]);
+    this.utiliServ.viderUser();
   }
 
   ngOnInit() {

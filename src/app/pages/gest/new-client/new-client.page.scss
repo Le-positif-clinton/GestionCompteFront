@@ -3,30 +3,30 @@
   }
   
   ion-toolbar {
-    --background: #ffffff;
+    --background: #c1c9ec;
   }
   ion-content{
-    --background: #E2FFE5;
+    --background: #6179e4;
     h1{
       font-size: 40px;
       text-align: center;
-      color: #3F4F27;
+      color: black;
       margin-top: 20px;
       font-weight: 20px;
     }
 
     ion-card{
-      margin-top: 10%;
+      margin-top: 5%;
       width: 90%;
       margin-left: 5%;
       margin-right: 5%;
       border-radius: 5%;
-      height: 85%;
+      height: 65%;
     }
 
 
     ion-button{
-      --background: #3F4F27;
+      --background: #6179e4;
       text-align: center;
       color: white;
       height: 10%;
@@ -39,7 +39,7 @@
 
     p{
       font-size: 26px;
-      color: #3F4F27;
+      color: black;
       text-align: center;
     }
     input{
@@ -52,7 +52,7 @@
     }
 
     ion-input{
-      --background: #E2FFE5;
+      --background: #c1c9ec;
       width: 80%;
       margin-right: 10%;
       margin-left: 10%;
@@ -63,7 +63,7 @@
     }
     h2{
         font-size: 20px;
-        color: #898F7F;
+        color: black;
         text-align: center;
       }
 
@@ -84,6 +84,7 @@
     }
 
     ion-select{
+      --background: #c1c9ec;
         width: 80%;
       margin-right: 10%;
       margin-left: 10%;
