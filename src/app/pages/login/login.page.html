@@ -1,11 +1,11 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/accuieil-a" icon="chevron-back-outline" text="Back"></ion-back-button>
     </ion-buttons>
     <ion-title></ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
   <ion-content [fullscreen]="true">
@@ -19,7 +19,7 @@
       <ion-input class="int1"   placeholder="Entrer Votre Email" [(ngModel)]="gestionnaire.email"> 
         <ion-icon slot="start" src="../../../assets/icon/person.svg"  aria-hidden="true"></ion-icon>
       </ion-input>
-      <ion-input class="int1"    placeholder="Entrer Votre Mot De Passe" [(ngModel)]="gestionnaire.motDePasse">
+      <ion-input class="int1"  type="password"  placeholder="Entrer Votre Mot De Passe" [(ngModel)]="gestionnaire.motDePasse">
         <ion-icon slot="start" src="../../../assets/icon/person.svg" aria-hidden="true"></ion-icon>
       </ion-input>
 

@@ -11,7 +11,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 })
 export class LoginPage implements OnInit {
 
-  gestionnaire:any = {};
+  gestionnaire:any = {motDePasse:"",nom:""};
 
   constructor(
     private apiServ: ApiService,
@@ -28,7 +28,6 @@ export class LoginPage implements OnInit {
     this.apiServ.login(this.gestionnaire).subscribe((rep:any)=>{
       if(this.gestionnaire.motDePasse == rep.motDePasse){
         alert("Bienvenu "+rep.nom+"!");
-        this.utiliServ.setUser(rep);
       this.router.navigate(['accueil']);
       }else{
         alert("Veuillez verifier votre email et ou mot de passe et reessayer !")
